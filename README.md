@@ -1,12 +1,12 @@
 #Pyramids
 Write a python code that prints out the following patterns
-Group members @Yaw offeh @Aron
+Group members @Yaw @Aron
 
 ```python3
 if user input is for example 5
 output>>
 1.
-    *
+     *
     **
    ***
   ****
