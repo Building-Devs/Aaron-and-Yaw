@@ -1,9 +1,13 @@
-import os
+"""
+@Aaron and @yaw
+"""
+
 
 def pyramid_one_side(num):
     res = []
-    for i in range(1, num+1):
-        pattern = "*" * i + "\n"
+    for i in range(num+1):
+        asteric_num = i+1
+        pattern = "  " * ((num-i)//2) + "*" * asteric_num + "\n"
         res.append(pattern)
     return "".join(res)
 
@@ -78,68 +82,20 @@ def pyramid(num):
 
 
 def main():
+    print("Please input a number:")
     try:
         t = int(input())
         print(pyramid_one_side(t))
-        print(pyramid_space_between(t))
         print(pyramid(t))
+        print(pyramid_space_between(t))
         print(pyramid_nums_between(t))
     except ValueError:
         print("Invalid input!!")
         main()
 
 
-
+import os
 if __name__ == "__main__":
-    os.system("clear")
+    os.system("cls")
     main()
 
-"""
-if user input is for example 5
-output>>
-1.
-     *
-    ***
-   *****
-  *******
- *********
-2.
-*
-**
-***
-****
-*****
-
-3.
-
-     *
-   *   *
-  *     *
- *       *
-*         *
-
-4.
-
-     *
-   * 1 *
-  *  2  *
- *   3   *
-*    4    *
-
-5.
-
-     *
-   * 1 *
-  *  2  *
- *   3   *
-*    4    *
-
-process
-
-difference in space [num-1]---> *
-                               ***
-                              *****
-                             *******
-bottom [num+= num-1]--->    *********
-
-"""
