@@ -1,10 +1,10 @@
-#Pyramids
+#Assignment
+
 Write a python code that prints out the following patterns
 Group members @Yaw @Aaron
 
 ```python3
-if user input is for example 5
-output>>
+#For example if the user's input is 5
 1.
     *
     **

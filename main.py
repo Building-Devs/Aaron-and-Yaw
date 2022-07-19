@@ -65,7 +65,36 @@ def pyramid_nums_between(num):
 
 #In descending order
 def pyramid_nums(num):
-    pass
+    res = []
+    cnt = num - 1
+    bottom = num+(num-1)
+    middle_num = num
+    j,k = 2, 0
+
+    for i in range(1, (bottom) + 1, 2):
+        num_length = len(str(middle_num))
+        if num_length == 1:
+            if i==1:
+                res.append(" "*num + "*" +"\n")
+                cnt -= 1
+                continue
+            pattern = " " * (cnt) + "*" + (" " * (i-j)) + str(middle_num) + (" " * (i-j)) + "*" + "\n"
+            j += 1
+            middle_num -= 1
+            res.append(pattern)
+            cnt -= 1
+        else:
+            k = num_length - (num_length-1)
+            if i==1:
+                res.append(" "*num + "*" +"\n")
+                cnt -= 1
+                continue
+            pattern = " " * (cnt) + "*" + (" " * (i-j-k)) + str(middle_num) + (" " * (i-j)) + "*" + "\n"
+            j += 1
+            middle_num -= 1
+            res.append(pattern)
+            cnt -= 1
+    return "".join(res)
 
 
 
@@ -89,6 +118,7 @@ def main():
         print(pyramid(t))
         print(pyramid_space_between(t))
         print(pyramid_nums_between(t))
+        print(pyramid_nums(t))
     except ValueError:
         print("Invalid input!!")
         main()
