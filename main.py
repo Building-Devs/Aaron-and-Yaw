@@ -7,7 +7,7 @@ def pyramid_one_side(num):
     res = []
     for i in range(num+1):
         asteric_num = i+1
-        pattern = "  " * ((num-i)//2) + "*" * asteric_num + "\n"
+        pattern = "*" * asteric_num + "\n"
         res.append(pattern)
     return "".join(res)
 
@@ -100,12 +100,10 @@ def pyramid_nums(num):
 
 def pyramid(num):
     res = []
-    cnt = num - 1
-    bottom = num+(num-1)
-    for i in range(1, (bottom) + 1, 2):
-        pattern = " " * cnt + "*" * i + "\n"
+    for i in range(num+1):
+        asteric_num = i+1
+        pattern = "  " * ((num-i)//2) + "*" * asteric_num + "\n"
         res.append(pattern)
-        cnt -= 1
     return "".join(res)
 
 
@@ -114,8 +112,8 @@ def main():
     print("Please input a number:")
     try:
         t = int(input())
-        print(pyramid_one_side(t))
         print(pyramid(t))
+        print(pyramid_one_side(t))
         print(pyramid_space_between(t))
         print(pyramid_nums_between(t))
         print(pyramid_nums(t))
